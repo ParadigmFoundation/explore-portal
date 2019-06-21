@@ -1,0 +1,95 @@
+.StatusCardWrapper {
+    height: 140px;
+    min-width: 263px;
+    border-radius: 2px;
+    padding: 23px 10px 10px 23px;
+    box-shadow: 3px 9px 15px 0 rgba(0, 0, 0, 0.07);
+    border: solid 1px #ededed;
+    background-color: #ffffff;
+    margin-bottom: 46px;
+    @media screen {
+        
+    }
+    .div-title {
+        height: 51px;
+        
+        font-family: Gilroy-Medium;
+        font-size: 20px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.2;
+        letter-spacing: normal;
+        text-align: left;
+        color: #404040;        
+    }    
+    .row-content {
+        display: flex;
+        justify-content: space-between;
+        .col-cont1 {
+            padding: 0;
+            .cont-connect {
+                opacity: 0.5;
+                font-family: 'Helvetica Neue';
+                font-size: 18px;
+                font-weight: 300;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                text-align: left;
+                color: #404040;                
+            }
+            .cont-val11 {
+                display: inline-block;
+                font-family: 'Helvetica Neue';
+                font-size: 28px;
+                font-weight: 300;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                text-align: left;
+                color: #404040;                
+            }
+            .smallfont {
+                font-size: 25px;
+            }
+            .cont-val12 {
+                display: inline-block;
+                margin-left: 3px;
+                opacity: 0.5;
+                font-family: 'Helvetica Neue';
+                font-size: 16px;
+                font-weight: 300;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                text-align: left;
+                color: #404040;                
+            }
+        }
+        .col-cont2 {
+            padding: 0;
+            float: right;
+            .cont-val21 {
+                opacity: 0.5;
+                font-family: 'Helvetica Neue';
+                font-size: 18px;
+                font-weight: 300;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                text-align: right;
+                color: #404040;
+            }
+            .div-mark {
+                float: right;
+                margin-top: 2px;
+            }
+        }
+
+    }
+}

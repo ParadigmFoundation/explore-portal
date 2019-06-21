@@ -1,0 +1,57 @@
+@import "bootstrap/scss/bootstrap.scss";
+$fa-font-path: "~font-awesome/fonts/";
+@import "font-awesome/scss/font-awesome.scss";
+@import "configs/color";
+@import "configs/font-faces";
+@import "configs/button";
+@import "configs/input";
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100vh;
+}
+.container-fluid {
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  
+}
+#app-container {
+  min-height: 100vh;
+  position: relative;
+}
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-2%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shrink {
+  0% {
+    width: 95%;
+  }
+  100% {
+    width: 90%;
+  }
+}

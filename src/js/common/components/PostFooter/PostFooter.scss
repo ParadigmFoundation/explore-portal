@@ -1,0 +1,36 @@
+.PostFooterWrapper {
+    padding-bottom: 40px;
+    bottom: 0;
+    @media(max-width: 450px){
+        position: static;
+    }
+    .absolute {
+        position: absolute;
+    }
+    width: 100%;
+    p, a {
+        display: inline-block;
+        opacity: 0.45;
+        font-family: Gilroy-Light ;
+        font-size: 14px;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.14;
+        letter-spacing: normal;
+        text-align: left;
+        color: #000000;        
+    }
+    P{
+        float: left;
+    }
+    a {
+        float: right;
+    }
+    a:hover {
+        color: #0BD080;
+        text-decoration: none;
+        font-family: Gilroy-Medium;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,186 @@
+.PostViewWrapper {
+    // padding-left: 147px;
+    // padding-right: 147px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    .div-post-title {
+        width: 755px;
+        padding-left: 0px;
+        margin-bottom: 0px;
+        font-family: Gilroy-Medium;
+        font-size: 48px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.21;
+        letter-spacing: normal;
+        text-align: left;
+        color: #404040;       
+        
+    }
+    .div-post-edit-label {
+        margin-top: 27px;
+        padding-left: 0px;
+        margin-bottom: 4px;
+        font-family: Gilroy-Light;
+        font-size: 20px;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.2;
+        letter-spacing: normal;
+        text-align: left;
+        color: #404040;
+        p {padding-left: 0px} 
+    }
+    .div-post-inputbtn {
+        .div-post-input {
+            width: 358px;
+            height: 49px;
+            padding: 15px 8px 15px 8px;
+            display: inline-block;
+            font-family: HelveticaNeue;
+            font-size: 16px;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+            border-style: none;
+            color: #404040;            
+            background-color: #fafafa;
+        }
+        .div-post-input::placeholder {
+            opacity: 0.25;
+            font-family: HelveticaNeue;
+            font-size: 16px;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+            color: #000000;
+        }
+        .div-post-post-button {
+            width: 99px;
+            height: 49px;
+            border-radius: 0px 2px 2px 0px;
+            background-color: #0bd080;   
+            display: inline-block;
+            font-family: Gilroy-Light;
+            font-size: 20px;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.2;
+            letter-spacing: normal;
+            text-align: center;
+            color: #ffffff;            
+        }
+    }
+    .div-post-success {
+        margin-top: 47px;
+        margin-bottom: 20px;
+        span {
+            height: 24px;
+            font-family: Gilroy-Light;
+            font-size: 20px;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.2;
+            letter-spacing: normal;
+            text-align: left;
+            color: #404040;            
+        }
+        a {
+            margin-left: 5px;
+            margin-bottom: 0px;
+            height: 24px;
+            font-family: Gilroy-Light;
+            font-size: 20px;
+            font-weight: 600;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.2;
+            letter-spacing: normal;
+            text-align: left;
+            color: #0bd080;            
+
+        }
+    }
+    .div-post-another {
+        height: 24px;
+        font-family: Gilroy-Light;
+        font-size: 20px;
+        font-weight: 600;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.2;
+        letter-spacing: normal;
+        text-align: left;    
+        color: #0bd080;            
+    }
+    .div-post-err-no-stake {
+        margin-top: 51px;
+        :first-child, :last-child {
+            height: 26px;
+            font-family: Gilroy-Light;
+            font-size: 20px;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.2;
+            letter-spacing: normal;
+            text-align: left;
+            color: #404040;            
+        }
+        .span-post-stake-link {
+            height: 26px;
+            margin-right: 5px;
+            margin-left: 5px;
+            font-family: Gilroy-Light;
+            font-size: 20px;
+            font-weight: 600;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.2;
+            letter-spacing: normal;
+            text-align: left;
+            color: #0bd080;                        
+        }
+
+    }
+    .div-post-view-docs {
+        width: 167px;
+        height: 49px;
+        flex-grow: 1;
+        margin-bottom: 20px;
+        padding-top: 11px;
+        border-radius: 2px;
+        font-family: Gilroy-Light;
+        font-size: 20px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.2;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;        
+        background-color: #7f7f7f;
+    }
+    .div-post-view-docs:hover {
+        background-color: lighten(#7f7f7f, 10%);
+    }
+    .pretty-code {
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 95%;
+        margin: 0;
+        padding: .2em .4em;
+        font-family: "Courier";
+    }
+}
