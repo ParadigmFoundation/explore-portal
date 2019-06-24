@@ -8,13 +8,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/scss/font-awesome.scss';   
 import { actions as ethereumActions } from './redux/modules/ethereum';
 import { connect } from 'react-redux'
-
+import { actions as tickerActions } from './redux/modules/ticker';
 const mapStateToProps = (state) => ({
   ethereum: state.ethereum,
 })
 
 const mapDispatchToProps = {
   ...ethereumActions,
+  ...tickerActions,
 }
 @connect(mapStateToProps, mapDispatchToProps)
 class Root extends Component {
@@ -22,6 +23,8 @@ class Root extends Component {
     super(props);
     const { connectServer } = this.props;
     connectServer();
+    const {getTicker} = props;
+    getTicker();    
   }
 
   get content() {

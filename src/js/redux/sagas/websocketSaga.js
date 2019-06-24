@@ -3,7 +3,7 @@ import { eventChannel} from 'redux-saga';
 
 import { constants as webSocketConstants, actions as webSocketActions } from '../modules/websocket';
 import { actions as exploreActions } from '../modules/explore';
-import { actions as ballanceActions } from '../modules/ballance';
+import { actions as balanceActions } from '../modules/balance';
 import { actions as bandwidthlimitActions } from '../modules/bandwidthlimit';
 
 function* createEventChannel(mySocket ) {
@@ -68,7 +68,7 @@ function* initializeWebSocketsChannel(action) {
       // in this case `data` is an OK response to a client request
       } else if (subId && id !== subId && data && code === 0) {
         if(id === 'balance-request') {
-          yield put(ballanceActions.updateBallance(data));
+          yield put(balanceActions.updateBalance(data));
         }
         else if (id === 'limit-request') {
           yield put(bandwidthlimitActions.updateBandWidthLimit(data));  

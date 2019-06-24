@@ -6,8 +6,9 @@ import digm from './modules/digm';
 import post from './modules/post';
 import websocket from './modules/websocket';
 import explore from './modules/explore';
-import ballance from './modules/ballance';
+import balance from './modules/balance';
 import bandwidthlimit from './modules/bandwidthlimit';
+import init from './modules/init'
 
 export default combineReducers({
   ethereum,
@@ -17,6 +18,7 @@ export default combineReducers({
   routing,
   websocket,
   explore,
-  ballance,
+  balance,
   bandwidthlimit,
+  init,
 });

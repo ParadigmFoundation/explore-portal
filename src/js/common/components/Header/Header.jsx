@@ -1,173 +1,181 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
-import './Header.scss';
-import imglogo from '../../../../assets/images/logo.png'
-import imgDown from '../../../../assets/images/down.png'
+import { Spinner } from 'react-bootstrap';
 
-import { actions as ethereumActions } from '../../../redux/modules/ethereum';
-import { actions as ballanceActions } from '../../../redux/modules/ballance';
-import MarkDigm from '../MarkDigm/MarkDigm';
-import { formatMoney, getConcentratedAddr } from '../../services/commonService';
-import HamburgerMenu from 'react-hamburger-menu'
-import CheeseburgerMenu from 'cheeseburger-menu'
-import MyMenuItem from '../HamburgerMenu/MenuItem'
-import Menu from '../HamburgerMenu/Menu'
-import MenuButton from '../HamburgerMenu/MenuButton'
+import './Header.scss';
+
+import imgLogo from '../../../../assets/images/logo.png';
+import DropDownMenu from '../DropDownMenu';
+import { actions as initActions } from '../../../redux/modules/init';
+import { actions as balanceActions } from '../../../redux/modules/balance';
+
+import { getConcentratedAddr, formatNumber } from '../../services/helpers';
+import {formatMoney} from '../../../common/services/helpers';
+
+
 const headerMenuItem = [
-  { caption: 'Bond', link: '#bond'},
-  { caption: 'Explore', link: '#explore'},
-  { caption: 'Post', link: '#post'},
+  { caption: 'DAI', name: 'dai'},
+  { caption: 'ZRX', name: 'zrx'},
+  { caption: 'WETH', name: 'weth'},
 ]
+
 const mapStateToProps = (state) => ({
-  ethereum: state.ethereum,
-  ballance: state.ballance,
-  digm: state.digm,
+  init: state.init,
+  balance: state.balance,
+  ticker: state.ticker,
 });
 
 const mapDispatchToProps = {
-  ...ethereumActions,
-  ...ballanceActions,
+  ...initActions,
+  ...balanceActions,
 };
 @connect(mapStateToProps, mapDispatchToProps)
-class Header extends Component {
+class Header extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      showMenu: false,
-      selectedMenuIndex: 1,
-      flgMenuUnHovered: false,
-      menuOpen: false,
-    };
+      selectedItemIndex: 0,
+      connectionStatus: 0, 
+      pageName: 'Name',
+    };    
   }
+  onCurrencyChange = (index) => {
+    const {getBalance} = this.props;
+    getBalance(headerMenuItem[index].name)
+    this.setState({selectedItemIndex: index});
 
-  componentDidUpdate(prevProps) {
-} 
-  onConnectServer = () => {
-    const {connectServer} = this.props;
-    connectServer();
   }
+  initCreate = () => {
+    const {initCreateInstance} = this.props;
+    initCreateInstance();
+  }
+  firstText = (v) => {
+    if(v === undefined || v == 0 || v == null) {
+      return '000000';
+    } else {
+      let s = formatNumber(v);
+      
+      s = s.replace('.','');
+      if (s.length > 6) return '';
+      return '0'.repeat(6-s.length);
+    }
 
-  onMouseEnter = () => {
-    this.setState({showMenu: true, flgMenuUnHovered: true});
-  }  
-
-  onMenuClick = (i) => {
-    this.setState({selectedMenuIndex: i,showMenu: false,flgMenuUnHovered: false, menuOpen: false});
   }
-  openMenu = () => {
-    this.setState({ menuOpen: true, flgMenuUnHovered: true })
+  secondText = (v) => {
+    if(v === undefined || v == 0 || v == null) {
+      return '';
+    } else {
+      return formatNumber(v);
+    }
   }
-
-  closeMenu = () => {
-    this.setState({ menuOpen: false })
-  }
-  dropDownMenu = () => {
-    const {selectedMenuIndex, flgMenuUnHovered, showMenu} = this.state;
+  Balance = () => {
+    const bal = this.props.balance.toJS();
+    const ticker = this.props.ticker.toJS();
+    const type = headerMenuItem[this.state.selectedItemIndex].name;
     return (
-      <div className="dropdown" >
-        <span >{headerMenuItem[selectedMenuIndex].caption}</span>
-        <img className='img-down clickable dropbtn' src={imgDown} onMouseEnter={this.onMouseEnter}/>
-          {showMenu && (
-            <div className="dropdown-content">
-              {headerMenuItem.map((item,index) => {
-                return <a 
-                        key={index} 
-                        href={headerMenuItem[index].link}
-                        onClick={()=>this.onMenuClick(index)}
-                        onMouseEnter= { () => this.setState({flgMenuUnHovered:false})}
-                        className={flgMenuUnHovered&&(selectedMenuIndex==index) ? 'selected' : ''}
-                      >
-                        {item.caption}
-                      </a>
-              })}
-            </div>)
-          }
-    </div>
+      <div className='div-val'>
+        <p className='first'>{this.firstText((bal[type]? bal[type]: 0))}</p>
+        <p className='second'>{this.secondText((bal[type]?bal[type]:0))}</p>
+        <div className='div-exval'>
+          <span>USD</span>
+          <p>{ticker[type] && bal[type] ? formatMoney(bal[type]*ticker[type]):'0'}</p>
+        </div>
+      </div>
     )
   }
- 
-  hamburgerMenu = () => {
-    return (
-      <div className="hamburger-menu" >
-        <HamburgerMenu
-          isOpen={this.state.menuOpen}
-          menuClicked={this.handleMenuClick}
-          width={32}
-          height={24}
-          strokeWidth={3}
-          rotate={0}
-          color='black'
-          borderRadius={0}
-          animationDuration={0.5}
-        />
-
-    </div>
-    )
-  }
-  handleMenuClick = () => {
-    this.setState({menuOpen:!this.state.menuOpen});
-  }
-  
-  handleLinkClick = () => {
-    this.setState({menuOpen: false});
-  }
-
-  render() {
-    const digmData = this.props.digm.toJS().result;
-    const { connecting, connected, coinbase } = this.props.ethereum.toJS();
-    const {selectedMenuIndex, flgMenuUnHovered, menuOpen} = this.state; 
-    const { ballance } = this.props.ballance.toJS();
-    const walletBalance = formatMoney(ballance ? ballance / Math.pow(10,18) : 0);
-    const menuItems = headerMenuItem.map((val,index)=>{
+  ConnectionState = () => {
+    const { create, initializing, error, networkId} = this.props.init.toJS();
+    const { fetching } = this.props.balance.toJS();
+    const {selectedItemIndex} = this.state;
+    if(initializing) {
       return (
-        <MyMenuItem
-          key={index} 
-          delay={`${index * 0.1}s`}
-          link = {val.link}
-          selected = {index == selectedMenuIndex}
-          onClick={()=>{this.onMenuClick(index);}}>{val.caption}</MyMenuItem>)
-    });
-  
-    return (
-      <header className='header-global container-fluid'>
-        <div className='row'>
-          <div className='div-logo col-6 col-sm-6 col-md-4 '>
-            <img className='img-logo clickable' src={imglogo} alt='logo' />
-            {this.dropDownMenu()}
-          </div>
-          <div className='div-meta col-md-4 d-none d-md-block text-center'>
-            <p className={connected? 'connected' : '' }><span/> MetaMask <span/></p>
-            {connecting 
-            ? <div className="connect-state">Connecting <div className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></div></div> 
-            : (connected 
-              ? <div className="connect-state"><a>{getConcentratedAddr(coinbase) }</a></div>
-              : <a className="connect-state" onClick ={this.onConnectServer}>Click here to connect </a> )}
-          </div>
-          <div className='div-bal col-6 col-sm-6 col-md-4'>
-            <div className='float-right'>
-              <div className = 'div-hamburger'>
-                {this.hamburgerMenu()}
-              </div>
-              <div className='div-bal-mark'>
-                <span className='label'>Balance</span>
-                <MarkDigm />
-              </div>
-              <p className='div-balance'>{walletBalance}</p>
+      <div className='div-disconnected'>
+        <span></span>
+        <p>
+          Connecting MetaMask...
+        </p>
+        {/* <Spinner animation="border" variant="secondary" size="sm"/> */}
+      </div>)
+    } else if(create) {
+      if(networkId == 1) {
+        return (
+          <React.Fragment>
+            <div className='div-connected'>
+              <div className='circle green'/>
+              <div className='address'>{getConcentratedAddr(create.coinbase)}</div>
             </div>
+
+            <div className='div-dropdown'>
+              <DropDownMenu
+                headerMenuItem = {headerMenuItem}
+                selectedMenuIndex = {selectedItemIndex}
+                onChange = {this.onCurrencyChange}
+                enabled = {true}
+              />
+            </div>
+            {this.Balance()}
+          </React.Fragment>)
+      } else {
+        return (<div className='div-disconnected'>
+          <div className='circle orange'/>
+            <span></span>
+            <p className='nohover'>Connect to Ethereum Main Net</p>          
+        </div>)
+      }
+    } else {
+      if(!error) {
+        return (
+          <div className='div-disconnected'>
+            <span></span>
+            <p onClick={this.initCreate}>Connect to MetaMask</p>
+          </div>
+        )
+      } else if( networkId != 1 ) {
+        return (<div className='div-disconnected'>
+          <div className='circle orange'/>
+          <span></span>
+          <p onClick={this.initCreate}>Connect to Ethereum Main Net</p>          
+        </div>)
+
+      } else if (error === 'user denied site access') {
+        return (<div className='div-disconnected'>
+          <div className='circle orange'/>
+          <span></span>
+          <p>Connect to Ethereum Main Net</p>          
+        </div>)       
+      } else if (error === 'non-ethereum browser detected') {
+        return (
+          <div className='div-disconnected'>
+            <span></span>
+            <p onClick={this.initCreate}>Connect to MetaMask</p>
+          </div>
+        )
+      }
+    }
+  }
+  render() {
+    // const { location } = this.props;
+    // const { pathname } = location;
+    // const { create, pageName } = this.props.init.toJS();
+    // const isHome = pathname === '/';
+    // const isJustAnotherPage = pathname === '/page';
+
+    return (
+      <header className='globalHeader container-fluid'>
+        <div className='row'>
+          <div className='div-logo '>
+            <img className='img-logo disabled' src={imgLogo}/> 
+            <span className='span-title'>Explore</span>
+            {/* <DropDownCaptionMenu /> */}
+          </div>
+          <div className='div-bal '>
+            {this.ConnectionState()}
           </div>
         </div>
-        <Menu open={this.state.menuOpen}>
-          {menuItems}
-        </Menu>        
       </header>
     );
   }
 }
 
-
-
-export default  Header;
-
-
+export default Header;

@@ -8,17 +8,17 @@ import {formatMoney, formatMoneyPlus,formatNumber, formatNumberPlus} from '../..
 import Footer from '../Footer/Footer';
 import imgArrow from '../../../../assets/images/arrow.png';
 import NumberFormat from 'react-number-format';
-import { actions as ballanceActions } from '../../../redux/modules/ballance';
+import { actions as balanceActions } from '../../../redux/modules/balance';
 import {fromWei} from "../../../utils/tokenUtils";
 
 const mapStateToProps = (state) => ({
   digm: state.digm,
-  ballance: state.ballance,
+  balance: state.balance,
 })
 
 const mapDispatchToProps = {
   ...digmActions,
-  ...ballanceActions,
+  ...balanceActions,
 }
 @connect(mapStateToProps, mapDispatchToProps)
 class AdjustStake extends PureComponent { 
@@ -65,8 +65,8 @@ progressBar = (availableBalance) => {
     };
 
     const saving = this.props.digm.toJS().saving;
-    const { ballance } = this.props.ballance.toJS();
-    const walletBalance = ballance ? ballance / Math.pow(10,18) : 0;      
+    const { balance } = this.props.balance.toJS();
+    const walletBalance = balance ? balance / Math.pow(10,18) : 0;      
 
     return (
       <div className="container-adjust container-fluid">

@@ -89,10 +89,13 @@
     "webpack-s3-plugin": "^1.0.0-rc.0"
   },
   "dependencies": {
+    "@kosu/create-portal-helper": "^0.1.0",
     "array-sort": "^1.0.0",
+    "bitcore-lib": "^0.16.0",
     "bootstrap": "^4.2.1",
     "cheeseburger-menu": "0.0.13",
     "classnames": "^2.2.6",
+    "ethers": "^4.0.30",
     "font-awesome": "^4.7.0",
     "fontawesome": "^5.6.3",
     "history": "^4.7.2",
@@ -121,7 +124,8 @@
     "redux": "^4.0.1",
     "redux-actions": "^2.6.3",
     "redux-saga": "^0.16.0",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "xmlhttprequest": "^1.8.0"
   },
   "jest": {
     "testURL": "http://www.SomeAwesome.com",

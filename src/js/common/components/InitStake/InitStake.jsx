@@ -10,17 +10,17 @@ import {formatNumber, } from '../../../common/services/commonService';
 import { actions as digmActions } from '../../../redux/modules/digm';
 import Footer from '../Footer/Footer';
 import NumberFormat from 'react-number-format';
-import { actions as ballanceActions } from '../../../redux/modules/ballance';
+import { actions as balanceActions } from '../../../redux/modules/balance';
 import { fromWei } from '../../../utils/tokenUtils'
 
 const mapStateToProps = (state) => ({
   digm: state.digm,
-  ballance: state.ballance,
+  balance: state.balance,
 })
 
 const mapDispatchToProps = {
   ...digmActions,
-  ...ballanceActions,
+  ...balanceActions,
 }
 @connect(mapStateToProps, mapDispatchToProps)
 class InitStake extends PureComponent {
