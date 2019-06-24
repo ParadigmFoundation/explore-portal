@@ -1,0 +1,250 @@
+@import "../../../../style/configs/color";
+.container-adjust {
+    border-top: 1px solid #ECECEC;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 49px;
+    .div-stake-current {
+        padding-left: 25px;
+        padding-right: 25px;
+        p:first-child {
+            margin-top: auto;
+            margin-bottom: auto;
+//            padding-left: 50px;
+            opacity: 0.75;
+            font-family: 'Gilroy-Light';
+            font-size: 17px;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.18;
+            letter-spacing: normal;
+            text-align: left;
+            color: #000000;            
+        }
+        div {
+            p {
+                margin-top:10px;
+                margin-bottom: 0px;
+                height: 133px;
+                opacity: 0.25;
+                font-family: 'HelveticaNeue';
+                font-size: 100px;
+                font-weight: 300;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                text-align: left;
+                color: #000000;                
+            }
+        }
+    }
+    .div-stake-new {
+        margin-top: 70px;
+        padding-left: 25px;
+        padding-right: 25px;        
+        p:first-child {
+            margin-top: auto;
+            margin-bottom: auto;
+            //padding-left: 50px;
+            opacity: 0.75;
+            font-family: 'Gilroy-Light';
+            font-size: 17px;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.18;
+            letter-spacing: normal;
+            text-align: left;
+            color: #000000;            
+        }
+        .div-stakte-new-val {
+            .div-skate-new-val-sub {
+                //width:326px;
+                width: 100%;
+                div {
+                    display: inline-block;
+                }
+                p {
+                    display: inline-block;
+                    float: right;
+                    margin-right: 0px;
+                    margin-bottom: 10px;
+                    opacity: 0.25;
+                    font-family: 'HelveticaNeue';
+                    font-size: 30px;
+                    font-weight: 300;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: normal;
+                    letter-spacing: normal;
+                    text-align: right;
+                    color: #000000;                
+                }
+            }
+            input {
+                width:100%;
+                padding-left: 10px;
+                border-radius: 9px;
+                border-style: none;
+                opacity: 0.75;
+                font-family: HelveticaNeue;
+                font-size: 100px;
+                font-weight: 300;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                text-align: left;
+                color: #000000;      
+                background-color: #fafafa;      
+            }
+            input:focus { outline: none; }
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                /* display: none; <- Crashes Chrome on hover */
+                -webkit-appearance: none;
+                margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+            }
+            
+            input[type=number] {
+                -moz-appearance:textfield; /* Firefox */
+            }            
+
+        }
+        .div-arrow {
+            margin-top: 89px;
+            text-align: center;
+            i {
+                font-size: 64px;          
+            }
+        }
+        @media (max-width: 768px) {
+            .div-arrow {
+                margin-top: 10px;
+            }
+        }
+        .div-stake-limit {              
+            .div-stake-limit-label {
+                p   { display: inline-block;}
+                .icon-question { 
+                    margin-left: 6px;
+                    display: inline-block;
+                    font-size: 1.4em;
+                    color:#bfbfbf;
+                    cursor: pointer;
+                  }
+
+                p:first-child {
+                    padding-left: 0px;
+                    padding-right: 5px;
+                    opacity: 0.25;
+                    font-family: 'Gilroy-Light';
+                    font-size: 20px;
+                    font-weight: 300;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.2;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: #000000;                    
+                }
+                p:last-child {
+                    margin-left: 10px;
+                    margin-bottom: 10px;
+                    opacity: 0.25;
+                    font-family: 'HelveticaNeue';
+                    font-size: 30px;
+                    font-weight: 300;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: normal;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: #000000;                    
+                }
+            }
+            .div-stake-limit-value {
+                opacity: 0.75;
+                font-family: HelveticaNeue;
+                font-size: 100px;
+                font-weight: 300;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                text-align: left;
+                color: #000000;                
+            }
+            .danger {
+                opacity: 0.25;
+            }
+
+        }
+    }
+    .div-progress {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    .div-stake-progress {
+        margin-bottom: 47px;
+        .label-state {
+            margin-top: 13px;
+            margin-bottom: 6px;
+            align:right;
+            font-family: 'Helvetica Neue';
+            font-size: 15px;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.14;
+            letter-spacing: normal;
+            text-align: right;
+            color: #c5c5c5;            
+        }
+        .progress{
+            height: 11px;
+            border-radius: 5.5px;
+            .progress-bar {
+                background-color: $color-green;
+                border-radius: 5.5px;
+            }
+        }
+        .danger  {
+            .progress-bar {
+                background-color: $color-error-light;
+            }
+        }
+        .label-progress {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+            div {
+                width: 25%;
+                height: 27px;
+                margin-top: 7px;
+                opacity: 0.25;
+                font-family: 'HelveticaNeue';
+                font-size: 16px;
+                font-weight: 300;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                text-align: center;
+                color: #000000;                
+            }
+            div:first-child {
+                width: 12.5%;
+                text-align: left;
+            }
+            div:last-child {
+                width: 12.5%;
+                text-align: right;
+            }
+
+        }
+        
+    }
+}

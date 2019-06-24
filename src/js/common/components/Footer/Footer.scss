@@ -1,0 +1,46 @@
+@import "../../../../style/configs/color";
+.div-footer {
+    height: 127px;
+    margin-bottom: 50px;
+    border-top: 1px solid #ECECEC;
+    padding-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    .btn {
+        display: inline-block;  
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .progress{
+        display: inline-block;  
+        margin-left: auto;
+        margin-right: auto;
+
+        width: 231px;
+        height: 49px;
+        border-radius: 2px;
+        position: relative;
+
+        .progress-bar {
+            background-color: $color-green;
+            border-radius: 0px;
+            height: 49px;
+            div {
+                position: absolute;
+                left: 70px;
+                font-family: Gilroy-Light;
+                font-size: 20px;
+                font-weight: 500;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.2;
+                letter-spacing: normal;
+                
+            }
+        }
+        
+    }
+
+
+}

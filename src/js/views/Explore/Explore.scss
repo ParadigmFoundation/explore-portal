@@ -1,0 +1,25 @@
+.ExploreWrapper{
+    @media (min-width: 1200px) {
+        max-width: 1180px;
+    }
+    @media (min-width: 1400px) {
+        max-width: 1280px;
+    }
+
+    .lbl-label {
+        //margin-left: 15px;
+        margin-bottom: 40px;
+        font-family: Gilroy-Medium;
+        font-size: 39px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.23;
+        letter-spacing: normal;
+        text-align: left;
+        color: #404040;        
+    }
+    .row-status {
+        margin-bottom: 47px;
+    }
+}

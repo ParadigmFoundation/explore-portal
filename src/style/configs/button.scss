@@ -1,0 +1,60 @@
+@import "configs/color";
+.btn-gray {
+    width: 231px;
+    height: 49px;
+    border-radius: 2px;
+    font-family: Gilroy-Light;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    background-color: $color-grey-light;    
+}
+
+.btn-gray-black {
+    width: 231px;
+    height: 49px;
+    border-radius: 2px;
+    font-family: Gilroy-Light;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    background-color: $color-grey;    
+}
+
+.btn-green {
+    width: 231px;
+    height: 49px;
+    border-style: none;
+    border-width: 0px;
+    border-radius: 2px;
+    font-family: Gilroy-Light;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    background-color: #0bd080;        
+}
+.btn:hover {
+    color: #ececec;
+    text-decoration: wavy;
+}
+button:active {
+    outline: none;
+    border: none;
+    }
+    
+button:focus {outline:0;}
