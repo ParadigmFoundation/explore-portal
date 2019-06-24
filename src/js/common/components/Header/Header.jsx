@@ -12,7 +12,7 @@ import { actions as balanceActions } from '../../../redux/modules/balance';
 
 import { getConcentratedAddr, formatNumber } from '../../services/helpers';
 import {formatMoney} from '../../../common/services/helpers';
-
+import DropDownCaptionMenu from '../DropDownCaptionMenu/DropDownCaptionMenu';
 
 const headerMenuItem = [
   { caption: 'DAI', name: 'dai'},
@@ -166,8 +166,8 @@ class Header extends PureComponent {
         <div className='row'>
           <div className='div-logo '>
             <img className='img-logo disabled' src={imgLogo}/> 
-            <span className='span-title'>Explore</span>
-            {/* <DropDownCaptionMenu /> */}
+            {/* <span className='span-title'>Explore</span> */}
+            <DropDownCaptionMenu />
           </div>
           <div className='div-bal '>
             {this.ConnectionState()}
