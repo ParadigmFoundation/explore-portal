@@ -1,22 +1,32 @@
 
 @font-face {
   font-family: 'Gilroy-Light';
-  src: url('../assets/fonts/Gilroy-Light.ttf'),
-       url('../assets/fonts/Gilroy-Light.otf') format('opentype');
+  src: url('../assets/fonts/Gilroy/Gilroy-Light.otf'),
+      //  url('../assets/fonts/Gilroy-Light.otf') format('opentype');
   
 }
 
 
 @font-face {
   font-family: 'Gilroy-Medium';
-  src: url('../assets/fonts/Gilroy-Medium.ttf'),
-       url('../assets/fonts/Gilroy-Medium.otf') format('opentype');
+  src: url('../assets/fonts/Gilroy/Gilroy-Medium.otf'),
+      //  url('../assets/fonts/Gilroy-Medium.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'HelveticaNeue';
-  src: url('../assets/fonts/HelveticaNeue-Light.otf') format('opentype');
+  font-family: 'DINPro-Medium';
+  src: url('../assets/fonts/DIN-Pro/DINPro-Medium.otf') format('opentype');
 }
+
+@font-face {
+  font-family: 'DINPro-Regular';
+  src: url('../assets/fonts/DIN-Pro/DINPro-Regular.otf') format('opentype');
+}
+
+// @font-face {
+//   font-family: 'DINPro-Light';
+//   src: url('../assets/fonts/DIN-Pro/DINPro-Light.otf') format('opentype');
+// }
 
 
 // @font-face {

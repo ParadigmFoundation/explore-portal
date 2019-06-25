@@ -4,7 +4,7 @@ import './MarkDigm.scss';
 import classNames from 'classnames';
 const MarkDigm = ({isSmallMark}) => (
   <div className="div-mark">
-    <span className={classNames("badge",{'small-mark':isSmallMark})}>DIGM</span>
+    <span className={classNames("badge",{'small-mark':isSmallMark})}>KOSU</span>
   </div>
 );
 export default MarkDigm;
