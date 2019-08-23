@@ -14,7 +14,7 @@ class DropDownCaptionMenu extends PureComponent {
 
     this.state = {
       showMenu: false,
-      selectedMenuIndex: 0,
+      selectedMenuIndex: 1,
       flgMenuUnHovered: false,
     };
   }
