@@ -2,7 +2,8 @@
   padding-top: 34px;
   padding-left: 47px;
   padding-right: 47px;
-  @media (max-width:425px){
+
+  @media (max-width: 425px) {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -14,41 +15,48 @@
   .div-logo {
     display: flex;
     .img-logo {
-      @media (max-width:576px){
-        height: 24px;  
-      }
-      @media (max-width:375px){
-        height: 18px;
-        margin-top:2px;
-      }
       height: 31px;
       opacity: 0.3;
+      @media (max-width: 576px) {
+        height: 24px;
+      }
+      @media (max-width: 375px) {
+        height: 18px;
+        margin-top: 2px;
+      }
     }
     .span-title {
       display: none;
-      @media (max-width:576px){
-        display: block;
-      }
-      @media (max-width:425px){
-        font-size: 10px;
-      }
       margin-top: 7px;
       margin-left: 2px;
       opacity: 0.25;
-      font-family: Gilroy;
+      font-family: Gilroy-Medium;
       font-size: 12px;
       line-height: 1.2;
+      @media (max-width: 576px) {
+        display: block;
+      }
+      @media (max-width: 425px) {
+        font-size: 10px;
+      }
     }
     .dropdown-caption {
       margin-top: 4px;
+      @media (max-width: 576px) {
+        display: none;
+      }
     }
   }
-  
+
   .div-bal {
     margin-left: auto;
     width: 460px;
     display: flex;
-    @media (max-width: 768px) { display:flex; width: auto; margin-left: auto; }
+    @media (max-width: 768px) {
+      display: flex;
+      width: auto;
+      margin-left: auto;
+    }
     .div-connected {
       float: left;
       .circle {
@@ -56,11 +64,11 @@
         width: 12px;
         height: 12px;
         border-radius: 10px;
-        background-color: #0bd080;        
+        background-color: #0bd080;
         @media (max-width: 576px) {
           width: 6px;
           height: 6px;
-        }  
+        }
       }
 
       .address {
@@ -73,12 +81,12 @@
         @media (max-width: 576px) {
           font-size: 12px;
           margin-left: 5px;
-          margin-top:7px;
+          margin-top: 7px;
         }
       }
     }
 
-    .div-disconnected{
+    .div-disconnected {
       display: flex;
       margin-left: auto;
       .circle {
@@ -86,7 +94,7 @@
         height: 12px;
         border-radius: 10px;
         margin-top: 14px;
-        margin-right: 23px;        
+        margin-right: 23px;
         @media (max-width: 768px) {
           margin-top: 14px;
           margin-right: 10px;
@@ -100,7 +108,7 @@
         @media (max-width: 425px) {
           margin-top: 10px;
           margin-right: 2px;
-        }        
+        }
       }
       span {
         margin-top: -8px;
@@ -114,43 +122,46 @@
       p {
         // display: inline-block;
         margin-top: 7px;
-        opacity:0.25;
+        opacity: 0.25;
         font-family: Gilroy-Medium;
         font-size: 20px;
-        @media (max-width:768px){
-          font-size:16px;
-        }
-        @media (max-width:576px){
-          font-size:12px;
-        }
-        @media (max-width:425px){
-          font-size:10px;
-        }
         font-weight: normal;
         line-height: 1.2;
         text-align: center;
-      
-        color: #000000;      
+
+        color: #000000;
         &:hover {
           cursor: pointer;
+        }
+        @media (max-width: 768px) {
+          font-size: 16px;
+        }
+        @media (max-width: 576px) {
+          font-size: 12px;
+        }
+        @media (max-width: 425px) {
+          font-size: 10px;
         }
       }
       .nohover {
         cursor: default;
-        &:hover{
+        &:hover {
           cursor: default;
         }
-      }      
+      }
     }
-    .green { background-color: #0bd080; }
-    .orange { 
-      background-color: #ffaf00; 
+    .green {
+      background-color: #0bd080;
     }
-    .red { background-color: #ff0000;; }
+    .orange {
+      background-color: #ffaf00;
+    }
+    .red {
+      background-color: #ff0000;
+    }
     .div-dropdown {
-      
       margin-left: auto;
-      @media (max-width: 768px){
+      @media (max-width: 768px) {
         display: none;
       }
     }
@@ -158,12 +169,14 @@
     .div-val {
       margin-left: 13px;
       margin-top: -16px;
-      @media (max-width: 768px){
+
+      @media (max-width: 768px) {
         display: none;
       }
+
       p {
         opacity: 0.75;
-        
+
         margin-bottom: 0px;
         height: 53px;
         font-family: DIN-Medium;
@@ -199,8 +212,8 @@
           letter-spacing: 0.7px;
           border-radius: 1px;
           text-align: center;
-          background-color: #7f7f7f;        
-          color: #ffffff;          
+          background-color: #7f7f7f;
+          color: #ffffff;
         }
         p {
           // display: inline-block;
@@ -211,46 +224,50 @@
           font-size: 20px;
           font-weight: 500;
           text-align: left;
-          color: #000000;          
+          color: #000000;
         }
       }
     }
   }
-  .hamburger-menu{
+  .hamburger-menu {
     display: none;
-    margin-top:8px;
-    margin-left:8px;
-    @media (max-width:576px){
+    margin-top: 8px;
+    margin-left: 8px;
+    @media (max-width: 576px) {
       display: block;
     }
-    @media (max-width:325px){
-      margin-top:6px;
+    @media (max-width: 325px) {
+      margin-top: 6px;
     }
-    .dropdown-content{
-      top:75px;
-      @media (max-width:425px){
-        top:70px;
+    .dropdown-content {
+      top: 75px;
+      @media (max-width: 425px) {
+        top: 70px;
       }
       border-radius: 2px;
-      width:250px;
-      
-      background-color:#ffffff;
+      width: 250px;
+
+      background-color: #ffffff;
       box-shadow: 1px 7px 7px 6px rgba(0, 0, 0, 0.06);
-      ul{
+      ul {
         list-style: none;
-        padding-top:20px;
-        padding-bottom:5px;
+        padding-top: 20px;
+        padding-bottom: 5px;
         font-size: 20px;
-        li{
-          opacity: 0.25;
-          padding-bottom:6px;
-          font-family: Gilroy-Medium;
-          &:hover{
-            opacity:0.5;
+        li {
+          padding-bottom: 6px;
+          a {
+            font-family: Gilroy-Medium;
+            opacity: 0.25;
+            text-decoration: none;
+            color: black;
+            &:hover {
+              opacity: 0.5;
+              cursor: pointer;
+            }
           }
         }
       }
     }
   }
-
 }
