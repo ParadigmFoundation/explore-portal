@@ -2,6 +2,10 @@
   padding-top: 34px;
   padding-left: 47px;
   padding-right: 47px;
+  @media (max-width:425px){
+    padding-left: 30px;
+    padding-right: 30px;
+  }
   height: 134px;
   .disabled {
     opacity: 0.25;
@@ -10,28 +14,41 @@
   .div-logo {
     display: flex;
     .img-logo {
+      @media (max-width:576px){
+        height: 24px;  
+      }
+      @media (max-width:375px){
+        height: 18px;
+        margin-top:2px;
+      }
       height: 31px;
       opacity: 0.3;
     }
     .span-title {
-      margin-top: 4px;
-      margin-left: 7px;
+      display: none;
+      @media (max-width:576px){
+        display: block;
+      }
+      @media (max-width:425px){
+        font-size: 10px;
+      }
+      margin-top: 7px;
+      margin-left: 2px;
       opacity: 0.25;
-      font-family: Gilroy-Medium;
-      font-size: 20px;
+      font-family: Gilroy;
+      font-size: 12px;
       line-height: 1.2;
     }
     .dropdown-caption {
       margin-top: 4px;
-      margin-left: 6px;
     }
   }
   
   .div-bal {
     margin-left: auto;
     width: 460px;
-
     display: flex;
+    @media (max-width: 768px) { display:flex; width: auto; margin-left: auto; }
     .div-connected {
       float: left;
       .circle {
@@ -40,6 +57,10 @@
         height: 12px;
         border-radius: 10px;
         background-color: #0bd080;        
+        @media (max-width: 576px) {
+          width: 6px;
+          height: 6px;
+        }  
       }
 
       .address {
@@ -49,6 +70,11 @@
         font-family: DIN-Medium;
         font-size: 18px;
         font-weight: 500;
+        @media (max-width: 576px) {
+          font-size: 12px;
+          margin-left: 5px;
+          margin-top:7px;
+        }
       }
     }
 
@@ -59,9 +85,22 @@
         width: 12px;
         height: 12px;
         border-radius: 10px;
-        margin-top: 12px;
+        margin-top: 14px;
         margin-right: 23px;        
-    
+        @media (max-width: 768px) {
+          margin-top: 14px;
+          margin-right: 10px;
+          width: 6px;
+          height: 6px;
+        }
+        @media (max-width: 576px) {
+          margin-top: 12px;
+          margin-right: 2px;
+        }
+        @media (max-width: 425px) {
+          margin-top: 10px;
+          margin-right: 2px;
+        }        
       }
       span {
         margin-top: -8px;
@@ -74,15 +113,24 @@
       }
       p {
         // display: inline-block;
-        margin-top: 5px;
-        height: 24px;
-        opacity: 0.25;
+        margin-top: 7px;
+        opacity:0.25;
         font-family: Gilroy-Medium;
         font-size: 20px;
-        font-weight: 500;
+        @media (max-width:768px){
+          font-size:16px;
+        }
+        @media (max-width:576px){
+          font-size:12px;
+        }
+        @media (max-width:425px){
+          font-size:10px;
+        }
+        font-weight: normal;
         line-height: 1.2;
-        text-align: left;
-        color: #000000;        
+        text-align: center;
+      
+        color: #000000;      
         &:hover {
           cursor: pointer;
         }
@@ -102,12 +150,17 @@
     .div-dropdown {
       
       margin-left: auto;
-      // float: right;
+      @media (max-width: 768px){
+        display: none;
+      }
     }
 
     .div-val {
       margin-left: 13px;
       margin-top: -16px;
+      @media (max-width: 768px){
+        display: none;
+      }
       p {
         opacity: 0.75;
         
@@ -159,6 +212,42 @@
           font-weight: 500;
           text-align: left;
           color: #000000;          
+        }
+      }
+    }
+  }
+  .hamburger-menu{
+    display: none;
+    margin-top:8px;
+    margin-left:8px;
+    @media (max-width:576px){
+      display: block;
+    }
+    @media (max-width:325px){
+      margin-top:6px;
+    }
+    .dropdown-content{
+      top:75px;
+      @media (max-width:425px){
+        top:70px;
+      }
+      border-radius: 2px;
+      width:250px;
+      
+      background-color:#ffffff;
+      box-shadow: 1px 7px 7px 6px rgba(0, 0, 0, 0.06);
+      ul{
+        list-style: none;
+        padding-top:20px;
+        padding-bottom:5px;
+        font-size: 20px;
+        li{
+          opacity: 0.25;
+          padding-bottom:6px;
+          font-family: Gilroy-Medium;
+          &:hover{
+            opacity:0.5;
+          }
         }
       }
     }
