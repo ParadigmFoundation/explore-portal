@@ -18,13 +18,8 @@ module.exports = (
     <div className={styles.content}>
       <Switch>
         <Route exact path="/" component={Explore} />
-        <Route path="/view" component={View} />
-        <Route path="/adjust" component={Adjust} />
-        <Route path="/init" component={Init} />
-        <Route path="/bond" component={Main} />
-        <Route path="/post" component={Post} />
         <Route path="/explore" component={Explore} />
-        <Route path="/*" component={Main} />
+        <Route path="/*" component={Explore} />
       </Switch>
     </div>
     <PostFooter />
