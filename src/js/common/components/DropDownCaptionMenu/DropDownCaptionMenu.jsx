@@ -49,7 +49,7 @@ class DropDownCaptionMenu extends PureComponent {
               return (
                 <a
                   key={index}
-                  href={headerMenuItem[index].link}
+                  href={item.link}
                   onClick={() => this.onMenuClick(index)}
                   onMouseEnter={() =>
                     this.setState({ flgMenuUnHovered: false })

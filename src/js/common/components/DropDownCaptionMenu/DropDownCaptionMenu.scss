@@ -16,8 +16,15 @@
   text-align: left;
   color: #808080;
   z-index: 1;
-  opacity: 0.7;
-
+  span {
+    opacity: 0.7;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
   .dropbtn {
     border: none;
     margin-left: 6px;
