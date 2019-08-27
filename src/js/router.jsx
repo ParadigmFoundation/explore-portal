@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { fromJS } from "immutable";
-// import createHistory from 'history/createHashHistory'
-import { createHistory } from "history";
+import createHistory from 'history/createHashHistory'
+// import { createHistory } from 'history';
 import { syncHistoryWithStore } from "react-router-redux";
 
 import routes from "./routes";

@@ -90,6 +90,7 @@
   },
   "dependencies": {
     "@kosu/create-portal-helper": "^0.1.0",
+    "@kosu/kosu.js": "^0.2.0",
     "array-sort": "^1.0.0",
     "bitcore-lib": "^0.16.0",
     "bootstrap": "^4.2.1",

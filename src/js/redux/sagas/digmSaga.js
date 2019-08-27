@@ -7,16 +7,16 @@ export function* getStakeFromServer() {
   const ethereum = state.ethereum.toJS();
 
   const {
-    paradigmConnect,
+    kosu,
     coinbase,
   } = ethereum;
 
-  const walletBalance = yield paradigmConnect.digmToken.balanceOf(coinbase);
-  const userPosterTokens = yield paradigmConnect.posterRegistry.tokensRegisteredFor(coinbase);
-  const totalPosterTokensContributed = yield paradigmConnect.posterRegistry.tokensContributed();
-  const currentTreasuryBalance = yield paradigmConnect.treasury.currentBalance(coinbase);
-  const systemBalance = yield paradigmConnect.treasury.systemBalance(coinbase);
-  const availableBalance = walletBalance.add(currentTreasuryBalance);
+  const walletBalance = yield kosu.kosuToken.balanceOf(coinbase);
+  const userPosterTokens = yield kosu.posterRegistry.tokensRegisteredFor(coinbase);
+  const totalPosterTokensContributed = yield kosu.posterRegistry.tokensContributed();
+  const currentTreasuryBalance = yield kosu.treasury.currentBalance(coinbase);
+  const systemBalance = yield kosu.treasury.systemBalance(coinbase);
+  // const availableBalance = kosu.walletBalance.add(currentTreasuryBalance);
 
   const result = {
     walletBalance,
@@ -24,7 +24,7 @@ export function* getStakeFromServer() {
     totalPosterTokensContributed,
     currentTreasuryBalance,
     systemBalance,
-    availableBalance,
+    // availableBalance,
   };
 
   yield put(stakeActions.updateStakeData(result));

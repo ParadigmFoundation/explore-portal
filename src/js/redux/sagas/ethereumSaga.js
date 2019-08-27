@@ -1,10 +1,12 @@
 import {put, fork, takeLatest, call, take, select} from 'redux-saga/effects';
 import Web3 from 'web3';
-import ParadigmConnect from 'paradigm-connect';
+// import Kosu from "@kosu/kosu.js";
 import { constants as web3Constants, actions as web3Actions } from '../modules/ethereum';
 import { actions as websocketActions } from '../modules/websocket';
 import { actions as digmActions } from '../modules/digm';
 import { eventChannel } from 'redux-saga';
+
+const { Kosu } = require("@kosu/kosu.js");
 
 function* createAccountsChangedEventChannel() {
   return eventChannel((emit) => {
@@ -45,13 +47,13 @@ export function* connectServer() {
     coinbase = 'readonly';
   }
 
-  const paradigmConnect = new ParadigmConnect({ provider: web3.currentProvider });
+  const kosu = new Kosu({ provider: web3.currentProvider });
 
   const connection = {
     web3,
     coinbase,
     connected: true,
-    paradigmConnect,
+    kosu,
   };
 
   yield put(web3Actions.getConnection(connection));
