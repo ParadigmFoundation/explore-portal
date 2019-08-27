@@ -89,7 +89,6 @@
     "webpack-s3-plugin": "^1.0.0-rc.0"
   },
   "dependencies": {
-    "@kosu/create-portal-helper": "^0.1.0",
     "@kosu/kosu.js": "^0.2.0",
     "array-sort": "^1.0.0",
     "bitcore-lib": "^0.16.0",
@@ -102,8 +101,6 @@
     "history": "^4.7.2",
     "immutable": "^3.8.2",
     "jquery": "^1.9.1",
-    "paradigm-connect": "^0.1.4",
-    "paradigm-contracts": "^0.2.3",
     "popper.js": "^1.14.7",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",

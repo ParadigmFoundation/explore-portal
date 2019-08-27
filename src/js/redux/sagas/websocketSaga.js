@@ -20,7 +20,7 @@ function* createEventChannel(mySocket ) {
 function* initializeWebSocketsChannel(action) {
   // const mySocket = new WebSocket("wss://bs3.paradigm.market/explore");
   try {
-    const mySocket = new WebSocket("wss://explorer-0.zaidan.io/v0");
+    const mySocket = new WebSocket("ws://fbi-van-9.local:4242/");
     const channel = yield call(createEventChannel, mySocket );
     let subId;
     while (true) {

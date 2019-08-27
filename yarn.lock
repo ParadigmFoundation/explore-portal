@@ -832,17 +832,6 @@
   resolved "https://registry.yarnpkg.com/@csstools/sass-import-resolve/-/sass-import-resolve-1.0.0.tgz#32c3cdb2f7af3cd8f0dca357b592e7271f3831b5"
   integrity sha512-pH4KCsbtBLLe7eqUrw8brcuFO8IZlN36JjdKlOublibVdAIPHCzEnpBWOVUXK5sCf+DpBi8ZtuWtjF0srybdeA==
 
-"@kosu/create-portal-helper@^0.1.0":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@kosu/create-portal-helper/-/create-portal-helper-0.1.2.tgz#f014aaa29a58ae36728c93cbea3580f9f64d5bb4"
-  integrity sha512-MtImQbeYUTMNl6TvX6EeQNaZDnGOikSIXhSH2oRDediWequR7wPKtw8eCvVjFbU/gEGFeI2IzpnxK1iF0krntw==
-  dependencies:
-    "0x.js" "^6.0.9"
-    "@0x/subproviders" "^4.0.6"
-    "@kosu/kosu.js" "^0.2.0"
-    "@kosu/tsc-config" "^0.1.0"
-    web3 "1.2.0"
-
 "@kosu/kosu.js@^0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@kosu/kosu.js/-/kosu.js-0.2.0.tgz#f6bb31fac991dfb2adedd6f75c12e15753565d9b"
