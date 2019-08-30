@@ -18,7 +18,6 @@ function* createEventChannel(mySocket ) {
 }
 
 function* initializeWebSocketsChannel(action) {
-  // const mySocket = new WebSocket("wss://bs3.paradigm.market/explore");
   try {
     const mySocket = new WebSocket("wss://explore-api.kosu.io/");
     const channel = yield call(createEventChannel, mySocket );
