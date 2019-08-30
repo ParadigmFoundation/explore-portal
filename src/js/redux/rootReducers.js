@@ -6,6 +6,7 @@ import explore from "./modules/explore";
 import balance from "./modules/balance";
 import init from "./modules/init";
 import bandwidthlimit from "./modules/bandwidthlimit";
+import ticker from "./modules/ticker";
 
 export default combineReducers({
   ethereum,
@@ -14,5 +15,6 @@ export default combineReducers({
   explore,
   balance,
   init,
-  bandwidthlimit
+  bandwidthlimit,
+  ticker
 });
