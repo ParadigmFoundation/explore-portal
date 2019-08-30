@@ -117,7 +117,7 @@ class TableValidators extends PureComponent {
                   <td >
                     <div className='div-circle'>
                       <div className="shape-circle"/>
-                      <div><a>{getConcentrated(row.publicKey)}</a></div>
+                      <div><a>{getConcentrated(row.publicKey, true)}</a></div>
                     </div>
                   </td>
                   <td >{row.stake}</td>

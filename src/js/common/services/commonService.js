@@ -19,7 +19,10 @@ export const formatNumberPlus = (v) => {
     return p+Number(v).toLocaleString(undefined,{minimumFractionDigits: 0, maximumFractionDigits: 0});
 }
 
-export const getConcentrated = (text) => {
+export const getConcentrated = (text, b64toHex) => {
+    if (b64toHex) {
+        text = Buffer.from(text, "base64").toString("hex");
+    }
     if(text.length > 12)
       return text.slice(0,10)+'...'+text.slice(-10);
     else
