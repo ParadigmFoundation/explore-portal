@@ -122,11 +122,11 @@ class TableTransaction extends PureComponent {
                   <td >
                     <div className='div-circle'>
                       <div className="shape-circle" style={{backgroundColor: '#'+row.order_id.slice(-6)}}/>
-                      <a href={API_URL+row.order_id} target='_blank'>{getConcentrated(row.order_id)}</a>
+                      <a href={API_URL+row.orderId} target='_blank'>{getConcentrated(row.orderId)}</a>
                     </div>
                   </td>
-                  <td ><a>{getConcentrated(row.poster_address)}</a></td>
-                  <td ><span className={"type-"+row.order_type}>{row.order_type}</span></td>
+                  <td ><a>{getConcentrated(row.posterAddress)}</a></td>
+                  <td ><span className={"type-"+row.orderType}>{row.orderType}</span></td>
                 </tr>)
                 )
               : null

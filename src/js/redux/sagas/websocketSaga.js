@@ -20,7 +20,7 @@ function* createEventChannel(mySocket ) {
 function* initializeWebSocketsChannel(action) {
   // const mySocket = new WebSocket("wss://bs3.paradigm.market/explore");
   try {
-    const mySocket = new WebSocket("wss://explorer-0.zaidan.io/v0");
+    const mySocket = new WebSocket("wss://explore-api.kosu.io/");
     const channel = yield call(createEventChannel, mySocket );
     let subId;
     while (true) {
@@ -59,6 +59,7 @@ function* initializeWebSocketsChannel(action) {
         // in this case, `data` is subscription data (see below)
         } else if (subId && id === subId && data) {
             // handle subscription data here
+            console.log("got data: %o", data)
             yield put(exploreActions.updateExploreData(data));
   
         // in this case, the server has encountered an error processing a subscription

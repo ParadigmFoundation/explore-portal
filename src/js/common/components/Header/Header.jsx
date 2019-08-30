@@ -9,6 +9,7 @@ import imgLogo from "../../../../assets/images/logo.png";
 import DropDownMenu from "../DropDownMenu";
 import { actions as initActions } from "../../../redux/modules/init";
 import { actions as balanceActions } from "../../../redux/modules/balance";
+import { actions as ethereumActions } from "../../../redux/modules/ethereum";
 
 import { getConcentratedAddr, formatNumber } from "../../services/helpers";
 import { formatMoney } from "../../../common/services/helpers";
@@ -31,12 +32,14 @@ const menuItem = [
 const mapStateToProps = state => ({
   init: state.init,
   balance: state.balance,
-  ticker: state.ticker
+  ticker: state.ticker,
+  ethereum: state.ethereum
 });
 
 const mapDispatchToProps = {
   ...initActions,
-  ...balanceActions
+  ...balanceActions,
+  ...ethereumActions
 };
 @connect(
   mapStateToProps,
@@ -58,8 +61,8 @@ class Header extends PureComponent {
     this.setState({ selectedItemIndex: index });
   };
   initCreate = () => {
-    const { initCreateInstance } = this.props;
-    initCreateInstance();
+    const { connectServer } = this.props;
+    connectServer();
   };
   firstText = v => {
     if (v === undefined || v == 0 || v == null) {
@@ -99,10 +102,17 @@ class Header extends PureComponent {
     );
   };
   ConnectionState = () => {
-    const { create, initializing, error, networkId } = this.props.init.toJS();
+    const {
+      kosu,
+      error,
+      networkId,
+      coinbase,
+      connected,
+      connecting
+    } = this.props.ethereum.toJS();
     const { fetching } = this.props.balance.toJS();
     const { selectedItemIndex } = this.state;
-    if (initializing) {
+    if (connecting) {
       return (
         <div className="div-disconnected">
           <div className="circle orange" />
@@ -110,15 +120,13 @@ class Header extends PureComponent {
           {/* <Spinner animation="border" variant="secondary" size="sm"/> */}
         </div>
       );
-    } else if (create) {
-      if (networkId == 1) {
+    } else if (connected) {
+      if (networkId == 1 || networkId == 3 || networkId == 6174 || networkId == 6175) {
         return (
           <React.Fragment>
             <div className="div-connected">
               <div className="circle green" />
-              <div className="address">
-                {getConcentratedAddr(create.coinbase)}
-              </div>
+              <div className="address">{getConcentratedAddr(coinbase)}</div>
             </div>
 
             <div className="div-dropdown">

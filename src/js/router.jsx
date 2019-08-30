@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { fromJS } from "immutable";
 // import createHistory from 'history/createHashHistory'
-import { createHistory } from "history";
+import { createHashHistory } from "history";
 import { syncHistoryWithStore } from "react-router-redux";
 
 import routes from "./routes";
@@ -22,7 +22,7 @@ if (window.__INITIAL_STATE__) {
   });
 }
 
-const hashHistory = createHistory();
+const hashHistory = createHashHistory();
 
 const store = configureStore(initialState, hashHistory);
 

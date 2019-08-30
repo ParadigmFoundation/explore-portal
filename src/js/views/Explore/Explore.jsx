@@ -43,11 +43,11 @@ const tableDataTrans = [
 ];
 
 const tableDataValidatorHeader = [
-  { title : 'ID', field: 'public_key'},
+  { title : 'ID', field: 'publicKey'},
   { title : 'Stake', field: 'stake'},
   { title : 'Reward', field: 'reward'},
-  { title : 'Uptime', field: 'uptime_percent'},
-  { title : 'Age (blocks)', field: 'first_block'},
+  { title : 'Uptime', field: 'uptimePercent'},
+  { title : 'Age (blocks)', field: 'firstVote'},
 ]
 const tableDataValidator = [
   { 
@@ -73,19 +73,20 @@ class Explore extends PureComponent {
   }
   getstatusData() {
     const { token, bandwidth, network } = this.props.explore.toJS();
+    console.log("\n%o, %o, %o\n", token, bandwidth, network);
     const { bandWidthLimit } = this.props.bandwidthlimit.toJS();
 
     if(!token) return dataTemplate;
     let data = dataTemplate;
-    data[0].value = formatNumber(network.block_height);
-    data[1].value = formatNumber(bandwidth.rebalance_period_number);
-    data[2].value = network.avg_block_interval/1000+'s';
-    data[3].value = formatNumber(token.total_supply / Math.pow(10,18));
-    data[4].value = formatNumber(network.number_validators);
-    data[4].subValue = formatMoney(network.total_validator_stake);
-    data[5].value = formatNumber(bandwidth.number_posters);
-    data[5].subValue = formatMoney(network.total_poster_stake / Math.pow(10,18));
-    data[6].value = formatNumber(bandwidth.remaining_limit);
+    data[0].value = formatNumber(network.blockHeight);
+    data[1].value = formatNumber(bandwidth.rebalancePeriodNumber);
+    data[2].value = network.avgBlockInterval/1000+'s';
+    data[3].value = formatNumber(token.totalSupply / Math.pow(10,18));
+    data[4].value = formatNumber(network.numberValidators);
+    data[4].subValue = formatMoney(network.totalValidatorStake);
+    data[5].value = formatNumber(bandwidth.numberPosters);
+    data[5].subValue = formatMoney(network.totalPosterStake / Math.pow(10,18));
+    data[6].value = formatNumber(bandwidth.remainingLimit);
     if(bandWidthLimit) {
       data[7].value = formatNumber( bandWidthLimit );
       data[7].showConnect = false;
@@ -130,7 +131,7 @@ class Explore extends PureComponent {
                 tableHeader = {tableDataValidatorHeader} 
                 // tableData = {tableDataValidator}
                  tableData = {validatorData}
-                 blockHeight = {network? network.block_height : 0}
+                 blockHeight = {network? network.blockHeight : 0}
               />
             </div>
         </div>            

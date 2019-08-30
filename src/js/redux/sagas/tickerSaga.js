@@ -11,6 +11,7 @@ const api_url = "https://api.cryptonator.com/api/ticker/";
 export function* getTicker() {
   while (true) {
     try {
+      console.log("ticker is running");
       const weth = yield call(axios.get, api_url + "eth-usd");
       const dai = yield call(axios.get, api_url + "dai-usd");
       const zrx = yield call(axios.get, api_url + "zrx-usd");
@@ -19,6 +20,7 @@ export function* getTicker() {
         dai: dai.data.ticker.price,
         zrx: zrx.data.ticker.price
       };
+      console.log(result);
       yield put(tickerActions.updateTicker(result));
     } catch (error) {
       console.log(error);
