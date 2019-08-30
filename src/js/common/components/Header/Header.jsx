@@ -121,7 +121,7 @@ class Header extends PureComponent {
         </div>
       );
     } else if (connected) {
-      if (networkId == 1) {
+      if (networkId == 1 || networkId == 3 || networkId == 6174 || networkId == 6175) {
         return (
           <React.Fragment>
             <div className="div-connected">

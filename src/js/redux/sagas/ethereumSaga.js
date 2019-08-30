@@ -1,8 +1,7 @@
 import { put, fork, takeLatest, call, take, select } from "redux-saga/effects";
 import Web3 from "web3";
-import { Kosu, KosuToken } from "@kosu/kosu.js";
-import { Web3Wrapper } from "@0x/web3-wrapper";
-import { ContractWrappers } from "0x.js";
+import { Kosu } from "@kosu/kosu.js";
+import { Web3Wrapper } from "@0x/web3-wrapper"; 
 import {
   constants as web3Constants,
   actions as web3Actions
@@ -11,7 +10,6 @@ import { actions as websocketActions } from "../modules/websocket";
 import { actions as tickerActions } from "../modules/ticker";
 import { eventChannel } from "redux-saga";
 import { actions as balanceActions } from "../modules/balance";
-// const { Kosu } = require("@kosu/kosu.js");
 
 function* createAccountsChangedEventChannel() {
   return eventChannel(emit => {
@@ -54,12 +52,7 @@ export function* connectServer() {
   }
   const networkId = yield web3.eth.net.getId();
   const web3Wrapper = new Web3Wrapper(web3.currentProvider);
-  const contractWrappers = new ContractWrappers(web3Wrapper.getProvider(), {
-    networkId
-  });
   const kosu = new Kosu({ provider: web3.currentProvider });
-  const options = { web3, web3Wrapper };
-  const kosuToken = new KosuToken(options);
 
   const connection = {
     web3,
@@ -67,8 +60,6 @@ export function* connectServer() {
     connected: true,
     networkId,
     kosu,
-    kosuToken,
-    contractWrappers
   };
 
   // yield put(tickerActions.getTicker());

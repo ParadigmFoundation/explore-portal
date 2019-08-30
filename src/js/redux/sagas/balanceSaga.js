@@ -12,9 +12,7 @@ export function* getBalance(action) {
     kosu,
     networkId,
     web3,
-    contractWrappers,
     coinbase,
-    kosuToken
   } = state.ethereum.toJS();
   const { type } = action.payload;
   console.log(kosu);
@@ -22,9 +20,9 @@ export function* getBalance(action) {
   if (type === "WETH" || type === "ZRX" || type === "DAI") {
     tokenAddress = getCommonTokenAddress(networkId, type);
   }
-    try {
-      const wethWei = yield kosuToken.balanceOf(tokenAddress);
-    
+  try {
+    const wethWei = yield kosu.kosuToken.balanceOf(tokenAddress);
+
     const value = web3.utils.fromWei(wethWei.toString());
     yield put(balanceActions.updateBalance({ [type]: value }));
   } catch (error) {
