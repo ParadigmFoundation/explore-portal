@@ -18,7 +18,7 @@
   "html": [
     {
 			"name": "homepage",
-      "title": "Paradigm",
+      "title": "Explore | Paradigm",
       "template": "_default.html",
       "filename": "index.html"
     }

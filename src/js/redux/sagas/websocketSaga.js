@@ -18,9 +18,9 @@ function* createEventChannel(mySocket ) {
 }
 
 function* initializeWebSocketsChannel(action) {
-  // const mySocket = new WebSocket("wss://bs3.paradigm.market/explore");
   try {
-    const mySocket = new WebSocket("wss://explore-api.kosu.io/");
+    // const mySocket = new WebSocket("wss://explore-api.kosu.io/");
+    const mySocket = new WebSocket("ws://fbi-van-9.local:4242");
     const channel = yield call(createEventChannel, mySocket );
     let subId;
     while (true) {
