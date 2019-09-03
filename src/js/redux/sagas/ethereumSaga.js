@@ -1,13 +1,12 @@
 import { put, fork, takeLatest, call, take, select } from "redux-saga/effects";
 import Web3 from "web3";
-import { Kosu } from "@kosu/kosu.js";
-import { Web3Wrapper } from "@0x/web3-wrapper"; 
+import { Kosu, KosuToken } from "@kosu/kosu.js";
+import { Web3Wrapper } from "@0x/web3-wrapper";
 import {
   constants as web3Constants,
   actions as web3Actions
 } from "../modules/ethereum";
 import { actions as websocketActions } from "../modules/websocket";
-import { actions as tickerActions } from "../modules/ticker";
 import { eventChannel } from "redux-saga";
 import { actions as balanceActions } from "../modules/balance";
 
@@ -51,21 +50,24 @@ export function* connectServer() {
     coinbase = "readonly";
   }
   const networkId = yield web3.eth.net.getId();
-  const web3Wrapper = new Web3Wrapper(web3.currentProvider);
-  const kosu = new Kosu({ provider: web3.currentProvider });
-
+  const web3Wrapper = yield new Web3Wrapper(web3.currentProvider);
+  // const kosu = new Kosu({ provider: web3.currentProvider });
+  const kosuToken = yield new KosuToken({
+    web3: web3,
+    web3Wrapper: web3Wrapper
+  });
   const connection = {
     web3,
     coinbase,
     connected: true,
     networkId,
-    kosu,
+    // kosu,
+    kosuToken
   };
 
-  // yield put(tickerActions.getTicker());
   yield put(web3Actions.getConnection(connection));
   yield put(websocketActions.connectWebSocket(coinbase));
-  yield put(balanceActions.getBalance("DAI"));
+  yield put(balanceActions.getBalance());
 }
 
 function* updateCoinbase() {

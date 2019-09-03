@@ -1,4 +1,4 @@
-import { select, put, fork, takeLatest, call } from "redux-saga/effects";
+import { put, fork, takeLatest, call } from "redux-saga/effects";
 import {
   constants as tickerConstants,
   actions as tickerActions

@@ -4,7 +4,6 @@ import { Provider } from "react-redux";
 import { HashRouter as Router } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-//import 'font-awesome/css/font-awesome.min.css'
 import "font-awesome/scss/font-awesome.scss";
 import { actions as ethereumActions } from "./redux/modules/ethereum";
 import { connect } from "react-redux";

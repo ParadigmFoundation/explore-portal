@@ -3,28 +3,17 @@ import {
   constants as balanceConstants,
   actions as balanceActions
 } from "../modules/balance";
-import { getCommonTokenAddress } from "../../common/services/helpers";
 
-export function* getBalance(action) {
+export function* getBalance() {
   const state = yield select();
   console.log(state.ethereum.toJS());
-  const {
-    kosu,
-    networkId,
-    web3,
-    coinbase,
-  } = state.ethereum.toJS();
-  const { type } = action.payload;
-  console.log(kosu);
-  let tokenAddress;
-  if (type === "WETH" || type === "ZRX" || type === "DAI") {
-    tokenAddress = getCommonTokenAddress(networkId, type);
-  }
-  try {
-    const wethWei = yield kosu.kosuToken.balanceOf(tokenAddress);
+  const { kosuToken, networkId, web3, coinbase } = state.ethereum.toJS();
 
-    const value = web3.utils.fromWei(wethWei.toString());
-    yield put(balanceActions.updateBalance({ [type]: value }));
+  try {
+    const wei = yield kosuToken.balanceOf(coinbase);
+    const value = web3.utils.fromWei(wei.toString());
+    // const value = "111111";
+    yield put(balanceActions.updateBalance({ balance: value }));
   } catch (error) {
     console.log(error);
   }

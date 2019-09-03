@@ -1,4 +1,3 @@
-import COMMON_TOKENS from "./common-tokens.json";
 export const formatMoney = v => {
   return v
     ? Number(v).toLocaleString(undefined, {
@@ -46,15 +45,4 @@ export const getConcentrated = text => {
 export const getConcentratedAddr = text => {
   if (text.length > 10) return text.slice(0, 6) + "..." + text.slice(-4);
   else return text;
-};
-
-export const getCommonTokenAddress = (networkId, ticker) => {
-  if (!COMMON_TOKENS[networkId]) {
-    return null;
-  }
-  const address = COMMON_TOKENS[networkId][ticker];
-  if (!address) {
-    return null;
-  }
-  return address;
 };

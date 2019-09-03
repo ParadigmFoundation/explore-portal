@@ -7,19 +7,13 @@ import "./Header.scss";
 
 import imgLogo from "../../../../assets/images/logo.png";
 import DropDownMenu from "../DropDownMenu";
-import { actions as initActions } from "../../../redux/modules/init";
 import { actions as balanceActions } from "../../../redux/modules/balance";
 import { actions as ethereumActions } from "../../../redux/modules/ethereum";
 
 import { getConcentratedAddr, formatNumber } from "../../services/helpers";
 import { formatMoney } from "../../../common/services/helpers";
 import DropDownCaptionMenu from "../DropDownCaptionMenu/DropDownCaptionMenu";
-
-const headerMenuItem = [
-  { caption: "DAI", name: "dai" },
-  { caption: "ZRX", name: "zrx" },
-  { caption: "WETH", name: "weth" }
-];
+import CurSpan from "../CurSpan/CurSpan";
 
 const menuItem = [
   { caption: "Create", link: "https://create.paradigm.market" },
@@ -30,14 +24,12 @@ const menuItem = [
 ];
 
 const mapStateToProps = state => ({
-  init: state.init,
   balance: state.balance,
   ticker: state.ticker,
   ethereum: state.ethereum
 });
 
 const mapDispatchToProps = {
-  ...initActions,
   ...balanceActions,
   ...ethereumActions
 };
@@ -57,7 +49,7 @@ class Header extends PureComponent {
   }
   onCurrencyChange = index => {
     const { getBalance } = this.props;
-    getBalance(headerMenuItem[index].name);
+    getBalance();
     this.setState({ selectedItemIndex: index });
   };
   initCreate = () => {
@@ -83,18 +75,17 @@ class Header extends PureComponent {
     }
   };
   Balance = () => {
-    const bal = this.props.balance.toJS();
+    const { balance } = this.props.balance.toJS();
     const ticker = this.props.ticker.toJS();
-    const type = headerMenuItem[this.state.selectedItemIndex].name;
     return (
       <div className="div-val">
-        <p className="first">{this.firstText(bal[type] ? bal[type] : 0)}</p>
-        <p className="second">{this.secondText(bal[type] ? bal[type] : 0)}</p>
+        <p className="first">{this.firstText(balance ? balance : 0)}</p>
+        <p className="second">{this.secondText(balance ? balance : 0)}</p>
         <div className="div-exval">
           <span>USD</span>
           <p>
-            {ticker[type] && bal[type]
-              ? formatMoney(bal[type] * ticker[type])
+            {ticker["dai"] && balance
+              ? formatMoney(balance * ticker["dai"])
               : "0"}
           </p>
         </div>
@@ -135,12 +126,7 @@ class Header extends PureComponent {
             </div>
 
             <div className="div-dropdown">
-              <DropDownMenu
-                headerMenuItem={headerMenuItem}
-                selectedMenuIndex={selectedItemIndex}
-                onChange={this.onCurrencyChange}
-                enabled={true}
-              />
+              <CurSpan curType="KOSU" enabled={true} />
             </div>
             {this.Balance()}
           </React.Fragment>
@@ -221,12 +207,6 @@ class Header extends PureComponent {
     this.setState({ menuOpen: !this.state.menuOpen });
   };
   render() {
-    // const { location } = this.props;
-    // const { pathname } = location;
-    // const { create, pageName } = this.props.init.toJS();
-    // const isHome = pathname === '/';
-    // const isJustAnotherPage = pathname === '/page';
-
     return (
       <header className="globalHeader container-fluid">
         <div className="row">
