@@ -1,31 +1,33 @@
-
 @font-face {
-  font-family: 'Gilroy-Light';
-  src: url('../assets/fonts/Gilroy/Gilroy-Light.otf') format('opentype'),
+  font-family: "Gilroy-Regular";
+  src: url("../assets/fonts/Gilroy/Gilroy-Regular.otf");
+}
+@font-face {
+  font-family: "Gilroy-Light";
+  src: url("../assets/fonts/Gilroy/Gilroy-Light.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'Gilroy-Medium';
-  src: url('../assets/fonts/Gilroy/Gilroy-Medium.otf') format('opentype'),
+  font-family: "Gilroy-Medium";
+  src: url("../assets/fonts/Gilroy/Gilroy-Medium.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'DINPro-Medium';
-  src: url('../assets/fonts/DIN-Pro/DINPro-Medium.otf') format('opentype');
+  font-family: "DINPro-Medium";
+  src: url("../assets/fonts/DIN-Pro/DINPro-Medium.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'DINPro-Regular';
-  src: url('../assets/fonts/DIN-Pro/DINPro-Regular.otf') format('opentype');
+  font-family: "DINPro-Regular";
+  src: url("../assets/fonts/DIN-Pro/DINPro-Regular.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'DINPro-Bold';
-  src: url('../assets/fonts/DIN-Pro/DINPro-Bold.otf') format('opentype');
+  font-family: "DINPro-Bold";
+  src: url("../assets/fonts/DIN-Pro/DINPro-Bold.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'DINPro-Light';
-  src: url('../assets/fonts/DIN-Pro/DINPro-Light.ttf') format('opentype');
+  font-family: "DINPro-Light";
+  src: url("../assets/fonts/DIN-Pro/DINPro-Light.ttf") format("opentype");
 }
-

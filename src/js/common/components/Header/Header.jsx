@@ -117,11 +117,16 @@ class Header extends PureComponent {
         <div className="div-disconnected">
           <div className="circle orange" />
           <p className="nohover">Connecting MetaMask...</p>
-          {/* <Spinner animation="border" variant="secondary" size="sm"/> */}
+          <Spinner animation="border" variant="secondary" size="sm" />
         </div>
       );
     } else if (connected) {
-      if (networkId == 1 || networkId == 3 || networkId == 6174 || networkId == 6175) {
+      if (
+        networkId == 1 ||
+        networkId == 3 ||
+        networkId == 6174 ||
+        networkId == 6175
+      ) {
         return (
           <React.Fragment>
             <div className="div-connected">
@@ -153,7 +158,7 @@ class Header extends PureComponent {
         return (
           <div className="div-disconnected">
             <div className="circle orange" />
-            <p onClick={this.initCreate}>Connect to MetaMask</p>
+            <p onClick={this.initCreate}>Click to Connect MetaMask</p>
           </div>
         );
       } else if (networkId != 1) {

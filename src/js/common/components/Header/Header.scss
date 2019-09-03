@@ -7,7 +7,7 @@
     padding-left: 30px;
     padding-right: 30px;
   }
-  height: 134px;
+  height: 118px;
   .disabled {
     opacity: 0.25;
   }
@@ -17,20 +17,22 @@
     .img-logo {
       height: 31px;
       opacity: 0.3;
+      margin-top: 2px;
       @media (max-width: 576px) {
         height: 24px;
+        margin-top: 5px;
       }
-      @media (max-width: 375px) {
+      @media (max-width: 425px) {
         height: 18px;
-        margin-top: 2px;
+        margin-top: 3px;
       }
     }
     .span-title {
       display: none;
-      margin-top: 7px;
+      margin-top: 6px;
       margin-left: 2px;
       opacity: 0.25;
-      font-family: Gilroy-Medium;
+      font-family: Gilroy-Regular;
       font-size: 12px;
       line-height: 1.2;
       @media (max-width: 576px) {
@@ -132,6 +134,7 @@
         color: #000000;
         &:hover {
           cursor: pointer;
+          opacity: 0.5;
         }
         @media (max-width: 768px) {
           font-size: 16px;
