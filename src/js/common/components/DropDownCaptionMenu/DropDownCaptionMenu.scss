@@ -10,12 +10,11 @@
   line-height: 1.2;
   letter-spacing: normal;
   text-align: left;
-  color: #808080;
   z-index: 1;
   span {
-    opacity: 0.7;
+    opacity: 0.25;
     &:hover {
-      opacity: 0.9;
+      opacity: 0.5;
     }
   }
   &:hover {
@@ -51,17 +50,18 @@
     opacity: 1;
     display: block;
     margin-top: 4px;
-    color: #bfbfbf;
+    color: #000;
     background-color: #fff;
     text-decoration: none;
+    opacity: 0.25;
   }
 
   .dropdown-content a.selected {
-    color: #808080;
+    opacity: 0.5;
   }
 
   .dropdown-content a:hover {
-    color: #808080;
+    opacity: 0.5;
     cursor: pointer;
   }
 

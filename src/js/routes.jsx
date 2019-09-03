@@ -17,6 +17,6 @@ module.exports = (
         <Route path="/*" component={Explore} />
       </Switch>
     </div>
-    <PostFooter />
+    {/* <PostFooter /> */}
   </div>
 );
