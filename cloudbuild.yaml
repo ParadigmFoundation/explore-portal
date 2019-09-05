@@ -1,0 +1,9 @@
+steps:
+- name: 'gcr.io/cloud-builders/npm'
+  args: ["i"]
+- name: 'gcr.io/cloud-builders/npm'
+  args: ["run", "build"]
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ["-m", "rm", "-rf", "gs://explore.paradigm.market/*"]
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ["-m", "cp", "-r", "./docroot/*", "gs://explore.paradigm.market/"]
