@@ -1,9 +1,22 @@
 steps:
-- name: 'gcr.io/cloud-builders/npm'
-  args: ["i"]
-- name: 'gcr.io/cloud-builders/npm'
-  args: ["run", "build"]
-- name: 'gcr.io/cloud-builders/gsutil'
-  args: ["-m", "rm", "-rf", "gs://explore.paradigm.market/*"]
-- name: 'gcr.io/cloud-builders/gsutil'
-  args: ["-m", "cp", "-r", "./docroot/*", "gs://explore.paradigm.market/"]
+  - name: node:lts
+    entrypoint: yarn
+    args: []
+
+  - name: node:lts
+    entrypoint: yarn
+    args: ["build"]
+
+  - name: gcr.io/cloud-builders/gsutil
+    args: [
+        "-m",
+        "rsync",
+        "-r",
+        "-c",
+        "-d",
+        "./docroot",
+        "gs://explore.paradigm.market",
+      ]
+
+options:
+ machineType: "N1_HIGHCPU_8"
