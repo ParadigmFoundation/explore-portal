@@ -108,7 +108,7 @@ class Header extends PureComponent {
         <div className="div-disconnected">
           <div className="circle orange" />
           <p className="nohover">Connecting MetaMask...</p>
-          <Spinner animation="border" variant="secondary" size="sm" />
+          {/* <Spinner animation="border" variant="secondary" size="sm" /> */}
         </div>
       );
     } else if (connected) {

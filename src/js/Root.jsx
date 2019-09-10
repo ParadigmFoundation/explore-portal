@@ -8,13 +8,16 @@ import "font-awesome/scss/font-awesome.scss";
 import { actions as ethereumActions } from "./redux/modules/ethereum";
 import { connect } from "react-redux";
 import { actions as tickerActions } from "./redux/modules/ticker";
+import { actions as webSocketActions } from "./redux/modules/websocket";
+
 const mapStateToProps = state => ({
   ethereum: state.ethereum
 });
 
 const mapDispatchToProps = {
   ...ethereumActions,
-  ...tickerActions
+  ...tickerActions,
+  ...webSocketActions
 };
 @connect(
   mapStateToProps,
@@ -24,8 +27,9 @@ class Root extends Component {
   constructor(props) {
     super(props);
 
-    const { getTicker } = props;
+    const { getTicker, connectWebSocket } = props;
     getTicker();
+    connectWebSocket("");
   }
 
   get content() {

@@ -56,6 +56,7 @@ export function* connectServer() {
     web3: web3,
     web3Wrapper: web3Wrapper
   });
+  console.log(kosuToken);
   const connection = {
     web3,
     coinbase,
@@ -64,7 +65,6 @@ export function* connectServer() {
     // kosu,
     kosuToken
   };
-
   yield put(web3Actions.getConnection(connection));
   yield put(websocketActions.connectWebSocket(coinbase));
   yield put(balanceActions.getBalance());
