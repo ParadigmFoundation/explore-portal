@@ -122,7 +122,7 @@ class TableTransaction extends PureComponent {
                           <div
                             className="shape-circle"
                             style={{
-                              backgroundColor: "#" + row.order_id.slice(-6)
+                              backgroundColor: "#" + row.orderId.slice(-6)
                             }}
                           />
                           <a href={API_URL + row.orderId} target="_blank">
