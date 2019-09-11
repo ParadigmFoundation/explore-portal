@@ -8,7 +8,7 @@ import { TableHead } from "reactstrap";
 import "./TableTransaction.scss";
 
 const colNames = ["order_id", "poster_address", "order_type"];
-const API_URL = "https://use.zaidan.io/0x/v2/order/";
+const API_URL = "https://orders-api.kosu.io/order?id=";
 class TableTransaction extends PureComponent {
   constructor(props) {
     super(props);
