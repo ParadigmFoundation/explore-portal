@@ -70,7 +70,7 @@ const dataTemplate = [
     showConnect: false
   },
   {
-    title: "Total bandwidth limit",
+    title: "Total orders posted",
     value: "0",
     isSmall: true,
     subValue: "",
@@ -141,7 +141,7 @@ class Explore extends PureComponent {
     data[4].subValue = formatMoney(network.totalValidatorStake);
     data[5].value = formatNumber(bandwidth.numberPosters);
     data[5].subValue = formatMoney(network.totalPosterStake / Math.pow(10, 18));
-    data[6].value = formatNumber(bandwidth.remainingLimit);
+    data[6].value = formatNumber(bandwidth.totalOrders);
     if (bandWidthLimit) {
       data[7].value = formatNumber(bandWidthLimit);
       data[7].showConnect = false;
