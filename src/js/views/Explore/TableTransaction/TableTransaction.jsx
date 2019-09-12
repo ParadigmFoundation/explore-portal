@@ -105,11 +105,11 @@ class TableTransaction extends PureComponent {
                     <span>Poster</span>
                   </div>
                 </th>
-                <th width="1000px">
+                {/* <th width="1000px">
                   <div style={{ minWidth: "200px" }}>
                     <span>Type</span>
                   </div>
-                </th>
+                </th> */}
               </tr>
             </thead>
 
@@ -133,11 +133,11 @@ class TableTransaction extends PureComponent {
                       <td>
                         <a>{getConcentrated(row.posterAddress)}</a>
                       </td>
-                      <td>
+                      {/* <td>
                         <span className={"type-" + row.orderType}>
                           {row.orderType}
                         </span>
-                      </td>
+                      </td> */}
                     </tr>
                   ))
                 : null}
