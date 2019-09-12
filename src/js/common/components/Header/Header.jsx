@@ -134,7 +134,7 @@ class Header extends PureComponent {
       } else {
         return (
           <div className="div-disconnected">
-            <div className="circle red" />
+            <div className="circle orange" />
             <p className="nohover">Connect to main net</p>
           </div>
         );
@@ -150,21 +150,21 @@ class Header extends PureComponent {
       } else if (networkId != 1) {
         return (
           <div className="div-disconnected">
-            <div className="circle red" />
+            <div className="circle orange" />
             <p className="nohover">Connect to main net</p>
           </div>
         );
       } else if (error === "user denied site access") {
         return (
           <div className="div-disconnected">
-            <div className="circle red" />
+            <div className="circle orange" />
             <p className="nohover">Connect to main net</p>
           </div>
         );
       } else if (error === "non-ethereum browser detected") {
         return (
           <div className="div-disconnected">
-            <div className="circle red" />
+            <div className="circle orange" />
             <p className="nohover">Non-ethereum browser</p>
           </div>
         );
