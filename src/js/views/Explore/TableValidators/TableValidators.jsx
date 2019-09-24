@@ -69,7 +69,7 @@ class TableValidators extends PureComponent {
   render() {
     const { tableData } = this.state;
     const { tableHeader, blockHeight } = this.props;
-    const tableWidth = ["200px", "90px", "130px", "110px", "140px"];
+    const tableWidth = ["200px", "80px", "140px", "110px", "140px"];
     return (
       <div className="TableValidatorsWrapper">
         <ReactTableContainer
