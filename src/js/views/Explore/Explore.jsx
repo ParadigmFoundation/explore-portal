@@ -98,7 +98,7 @@ const tableDataTrans = [
 const tableDataValidatorHeader = [
   { title: "ID", field: "publicKey" },
   { title: "Stake", field: "stake" },
-  { title: "Reward (ETH/period)", field: "reward" },
+  { title: "Reward", field: "reward" },
   { title: "Uptime", field: "uptimePercent" },
   { title: "Age (blocks)", field: "firstVote" }
 ];
