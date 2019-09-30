@@ -977,7 +977,7 @@
   resolved "https://registry.yarnpkg.com/@csstools/sass-import-resolve/-/sass-import-resolve-1.0.0.tgz#32c3cdb2f7af3cd8f0dca357b592e7271f3831b5"
   integrity sha512-pH4KCsbtBLLe7eqUrw8brcuFO8IZlN36JjdKlOublibVdAIPHCzEnpBWOVUXK5sCf+DpBi8ZtuWtjF0srybdeA==
 
-"@kosu/kosu.js@0.3":
+"@kosu/kosu.js@0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@kosu/kosu.js/-/kosu.js-0.3.0.tgz#d0f9feca4eb5205089af258b5f23bd66c781368a"
   integrity sha512-WmTmXg9P36o2FX6+Sc4eBSvWxh5k2lOreXjWcDkJwNns4WlPyU+wMlwUlhjRxI7IdcKubl5QQSP7xhTtPBQ2pg==
