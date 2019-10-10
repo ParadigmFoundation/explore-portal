@@ -8,89 +8,88 @@
     background-color: #ffffff;
     margin-bottom: 34px;
     @media screen {
-        
     }
     .div-title {
-        height: 51px;
-        
-        font-family: Gilroy-Medium;
-        font-size: 18px;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.2;
-        letter-spacing: normal;
-        text-align: left;
-        color: #4A4A4A;        
-    }    
-    .row-content {
-        display: flex;
-        justify-content: space-between;
-        .col-cont1 {
-            padding: 0;
-            .cont-connect {
-                opacity: 0.5;
-                font-family: 'DINPro-Regular' !important;
-                font-size: 18px;
-                font-weight: 300;
-                font-style: normal;
-                font-stretch: normal;
-                line-height: normal;
-                letter-spacing: normal;
-                text-align: left;
-                color: #4A4A4A;
-                margin-top: 9px;                
-            }
-            .cont-val11 {
-                display: inline-block;
-                font-family: 'DINPro-Medium';
-                font-size: 31px;
-                font-weight: 300;
-                font-style: normal;
-                font-stretch: normal;
-                line-height: normal;
-                letter-spacing: normal;
-                text-align: left;
-                color: #4A4A4A;                
-            }
-            .smallfont {
-                font-size: 31px;
-            }
-            .cont-val12 {
-                display: inline-block;
-                margin-left: 3px;
-                opacity: 0.5;
-                font-family: 'DINPro-Regular' !important;
-                font-size: 16px;
-                font-weight: 300;
-                font-style: normal;
-                font-stretch: normal;
-                line-height: normal;
-                letter-spacing: normal;
-                text-align: left;
-                color: #4A4A4A;                
-            }
-        }
-        .col-cont2 {
-            padding: 0;
-            float: right;
-            .cont-val21 {
-                opacity: 0.5;
-                font-family: 'DINPro-Light' !important;
-                font-size: 18px;
-                font-weight: 300;
-                font-style: normal;
-                font-stretch: normal;
-                line-height: normal;
-                letter-spacing: normal;
-                text-align: right;
-                color: #4A4A4A;
-            }
-            .div-mark {
-                float: right;
-                margin-top: 2px;
-            }
-        }
-
+      height: 51px;
+  
+      font-family: Gilroy-Medium;
+      font-size: 18px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: left;
+      color: #4a4a4a;
     }
-}
+    .row-content {
+      display: flex;
+      justify-content: space-between;
+      .col-cont1 {
+        padding: 0;
+        .cont-connect {
+          opacity: 0.5;
+          font-family: "DINPro-Regular" !important;
+          font-size: 18px;
+          font-weight: 300;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          text-align: left;
+          color: #4a4a4a;
+          margin-top: 9px;
+        }
+        .cont-val11 {
+          display: inline-block;
+          font-family: "DINPro-Medium";
+          font-size: 31px;
+          font-weight: 300;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          text-align: left;
+          color: #4a4a4a;
+        }
+        .smallfont {
+          font-size: 31px;
+        }
+  
+        .cont-val12 {
+          display: inline-block;
+          margin-left: 3px;
+          opacity: 0.5;
+          font-family: "DINPro-Regular" !important;
+          font-size: 16px;
+          font-weight: 300;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          text-align: left;
+          color: #4a4a4a;
+        }
+      }
+      .col-cont2 {
+        padding: 0;
+        float: right;
+        .cont-val21 {
+          opacity: 0.5;
+          font-family: "DINPro-Light" !important;
+          font-size: 18px;
+          font-weight: 300;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          text-align: right;
+          color: #4a4a4a;
+        }
+        .div-mark {
+          float: right;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
