@@ -5,7 +5,8 @@ import arraySort from "array-sort";
 import ReactTableContainer from "react-table-container";
 import { TableHead } from "reactstrap";
 import "./TableValidators.scss";
-import { getConcentrated } from "../../../common/services/commonService";
+import { getConcentrated, formatNumber } from "../../../common/services/commonService";
+
 
 class TableValidators extends PureComponent {
   constructor(props) {
@@ -131,7 +132,7 @@ class TableValidators extends PureComponent {
                       <td>{row.stake}</td>
                       <td>{row.reward} ETH/period</td>
                       <td>{row.uptimePercent}%</td>
-                      <td>{row.lastVoted - row.firstVote}</td>
+                      <td>{formatNumber(row.lastVoted - row.firstVote)}</td>
                     </tr>
                   ))
                 : null}
