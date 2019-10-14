@@ -76,6 +76,7 @@ function* updateCoinbase() {
   const coinbase = yield call(ethereum.web3.eth.getCoinbase);
 
   yield put(web3Actions.coinbaseUpdated(coinbase));
+  yield put(balanceActions.getBalance());
 }
 
 function* watchConnecting() {

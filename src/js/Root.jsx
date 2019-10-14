@@ -24,7 +24,8 @@ class Root extends Component {
   constructor(props) {
     super(props);
 
-    const { getTicker } = props;
+    const { getTicker, connectServer } = props;
+    connectServer();
     getTicker();
   }
 
