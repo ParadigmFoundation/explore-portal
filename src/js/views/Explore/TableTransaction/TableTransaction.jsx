@@ -131,7 +131,7 @@ class TableTransaction extends PureComponent {
                         </div>
                       </td>
                       <td>
-                        <a href={"https://etherscan.io/address/" + row.posterAddress} target="_blank">{getConcentrated(row.posterAddress)}</a>
+                        <a href={"https://ropsten.etherscan.io/address/" + row.posterAddress} target="_blank">{getConcentrated(row.posterAddress)}</a>
                       </td>
                       {/* <td>
                         <span className={"type-" + row.orderType}>
