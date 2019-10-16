@@ -21,7 +21,7 @@ export const formatMoneyPlus = v => {
 export const formatNumber = v => {
   return Number(v).toLocaleString(undefined, {
     minimumFractionDigits: 0,
-    maximumFractionDigits: 6
+    maximumFractionDigits: 4
   });
 };
 
