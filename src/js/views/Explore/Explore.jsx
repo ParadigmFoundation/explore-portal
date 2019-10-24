@@ -138,7 +138,7 @@ class Explore extends PureComponent {
     data[2].value = network.avgBlockInterval + "s";
     data[3].value = formatNumber(token.totalSupply / Math.pow(10, 18));
     data[4].value = formatNumber(network.numberValidators);
-    data[4].subValue = formatMoney(network.totalValidatorStake);
+    data[4].subValue = formatMoney(network.totalValidatorStake / Math.pow(10, 18)) ;
     data[5].value = formatNumber(bandwidth.numberPosters);
     data[5].subValue = formatMoney(network.totalPosterStake / Math.pow(10, 18));
     data[6].value = formatNumber(bandwidth.totalOrders);
