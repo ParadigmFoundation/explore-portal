@@ -1,9 +1,9 @@
 steps:
-  - name: node:lts
+  - name: node:10
     entrypoint: yarn
     args: []
 
-  - name: node:lts
+  - name: node:10
     entrypoint: yarn
     args: ["build"]
 
