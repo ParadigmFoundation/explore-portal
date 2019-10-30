@@ -129,7 +129,7 @@ class TableValidators extends PureComponent {
                           </div>
                         </div>
                       </td>
-                      <td>{row.stake}</td>
+                      <td>{formatNumber((row.stake) / Math.pow(10, 18))}</td>
                       <td>{row.reward} ETH/period</td>
                       <td>{row.uptimePercent}%</td>
                       <td>{formatNumber(row.lastVoted - row.firstVote)}</td>
