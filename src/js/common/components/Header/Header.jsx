@@ -107,16 +107,16 @@ class Header extends PureComponent {
       return (
         <div className="div-disconnected">
           <div className="circle orange" />
-          <p className="nohover">Connecting MetaMask...</p>
+          <p className="nohover">Connecting...</p>
           <Spinner animation="border" variant="secondary" size="sm" />
         </div>
       );
     } else if (connected) {
       if (
         networkId == 1 ||
-        networkId == 3 ||
-        networkId == 6174 ||
-        networkId == 6175
+        networkId == 3
+        // networkId == 6174 ||
+        // networkId == 6175
       ) {
         return (
           <React.Fragment>
@@ -134,7 +134,7 @@ class Header extends PureComponent {
       } else {
         return (
           <div className="div-disconnected">
-            <div className="circle orange" />
+            <div className="circle red" />
             <p className="nohover">Connect to main net</p>
           </div>
         );
@@ -150,21 +150,21 @@ class Header extends PureComponent {
       } else if (networkId != 1) {
         return (
           <div className="div-disconnected">
-            <div className="circle orange" />
+            <div className="circle red" />
             <p className="nohover">Connect to main net</p>
           </div>
         );
       } else if (error === "user denied site access") {
         return (
           <div className="div-disconnected">
-            <div className="circle orange" />
+            <div className="circle red" />
             <p className="nohover">Connect to main net</p>
           </div>
         );
       } else if (error === "non-ethereum browser detected") {
         return (
           <div className="div-disconnected">
-            <div className="circle orange" />
+            <div className="circle red" />
             <p className="nohover">Non-ethereum browser</p>
           </div>
         );
