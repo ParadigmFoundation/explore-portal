@@ -106,9 +106,8 @@ class Header extends PureComponent {
     if (connecting) {
       return (
         <div className="div-disconnected">
-          <div className="circle orange" />
           <p className="nohover">Connecting...</p>
-          <Spinner animation="border" variant="secondary" size="sm" />
+          {/* <Spinner animation="border" variant="secondary" size="sm" /> */}
         </div>
       );
     } else if (connected) {
@@ -131,11 +130,16 @@ class Header extends PureComponent {
             {this.Balance()}
           </React.Fragment>
         );
+      } else if (networkId != 1) {
+        return (
+          <div className="div-disconnected">
+            <p className="wrongnetwork">Connect to main net</p>
+          </div>
+        );
       } else {
         return (
           <div className="div-disconnected">
-            <div className="circle red" />
-            <p className="nohover">Connect to main net</p>
+            <p className="nohover">Connect MetaMask</p>
           </div>
         );
       }
@@ -143,29 +147,19 @@ class Header extends PureComponent {
       if (!error) {
         return (
           <div className="div-disconnected">
-            <div className="circle orange" />
-            <p onClick={this.initCreate}>Click to Connect MetaMask</p>
-          </div>
-        );
-      } else if (networkId != 1) {
-        return (
-          <div className="div-disconnected">
-            <div className="circle red" />
-            <p className="nohover">Connect to main net</p>
+            <p onClick={this.initCreate}>Connect MetaMask</p>
           </div>
         );
       } else if (error === "user denied site access") {
         return (
           <div className="div-disconnected">
-            <div className="circle red" />
-            <p className="nohover">Connect to main net</p>
+            <p className="wrongnetwork">Connect to main net</p>
           </div>
         );
       } else if (error === "non-ethereum browser detected") {
         return (
           <div className="div-disconnected">
-            <div className="circle red" />
-            <p className="nohover">Non-ethereum browser</p>
+            <p className="wrongnetwork">Non-ethereum browser</p>
           </div>
         );
       }
@@ -212,7 +206,7 @@ class Header extends PureComponent {
         <div className="row">
           <div className="div-logo ">
             <img className="img-logo disabled" src={imgLogo} />
-            <span className="span-title">Explore</span>
+            {/* <span className="span-title">Explore</span> */}
             <DropDownCaptionMenu menuItem={menuItem} />
           </div>
           <div className="div-bal ">{this.ConnectionState()}</div>
