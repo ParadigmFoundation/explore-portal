@@ -67,7 +67,7 @@ class TableTransaction extends PureComponent {
         <ReactTableContainer
           className="rtc"
           width="100%"
-          height="635px"
+          // height="635px"
           customHeader={[TableHead]}
           scrollbarStyle={{
             background: {
@@ -140,7 +140,11 @@ class TableTransaction extends PureComponent {
                       </td> */}
                     </tr>
                   ))
-                : null}
+                : (
+                  <tr className="tr-no-order">
+                    <td colSpan="5">No orders to display.</td>
+                  </tr>
+                )}
             </tbody>
           </table>
         </ReactTableContainer>

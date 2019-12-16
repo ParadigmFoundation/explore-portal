@@ -21,7 +21,7 @@ class MenuItem extends Component{
         marginBottom: '12px',
       },
       menuItem:{
-        fontFamily:'Gilroy-Medium',
+        fontFamily:'Rubik',
         fontSize: '1.5rem',
         padding: '1rem 0',
         margin: '2rem 9%',
